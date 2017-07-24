@@ -6,8 +6,9 @@ If (Test-Path $strFolderName){
 New-Item dist -type directory
 
 # restore and build
+dotnet clean
 dotnet restore
 dotnet build
 
 # publish
-dotnet publish -o dist -c Release
+dotnet publish -o dist -c Release --runtime win10-x64
